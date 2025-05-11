@@ -1,5 +1,8 @@
 package src;
 
+import src.dao.TempDB;
+import src.entity.Employee;
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -19,7 +22,7 @@ public class Ques3 {
         List<Employee> employeeList = TempDB.getEmployees();
 
         Map<String, List<Employee>> groupedEmployees = employeeList.stream()
-                .collect(Collectors.groupingBy(x -> x.dept));
+                .collect(Collectors.groupingBy(Employee::getDept));
 
         System.out.println(groupedEmployees);
     }
