@@ -1,4 +1,8 @@
-package src;
+package src.dao;
+
+import src.entity.Employee;
+import src.entity.Gender;
+import src.entity.Project;
 
 import java.util.*;
 
@@ -50,58 +54,58 @@ public class TempDB {
 }
 
 
-class Employee {
-    String name;
-    String dept;
-    List<Project> projects;
-    double salary;
-    Gender gender;
-
-    public Employee(String name, String dept, List<Project> projects, double salary, Gender gender) {
-        this.name = name;
-        this.dept = dept;
-        this.projects = projects;
-        this.salary = salary;
-        this.gender = gender;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", dept='" + dept + '\'' +
-                ", projects=" + projects +
-                ", salary=" + salary +
-                ", gender=" + gender +
-                '}';
-    }
-}
-
-class Project {
-    String projectID;
-    String name;
-    String client;
-    String BULeadName;
-
-    public Project(String projectID, String name, String client, String BULeadName) {
-        this.projectID = projectID;
-        this.name = name;
-        this.client = client;
-        this.BULeadName = BULeadName;
-    }
-
-    @Override
-    public String toString() {
-        return "Project{" +
-                "projectID='" + projectID + '\'' +
-                ", name='" + name + '\'' +
-                ", client='" + client + '\'' +
-                ", BULeadName='" + BULeadName + '\'' +
-                '}';
-    }
-}
-
-enum Gender {
-    MALE,
-    FEMALE
-}
+//lass Employee {
+//String name;
+//String dept;
+//List<Project> projects;
+//double salary;
+//Gender gender;
+//
+//public Employee(String name, String dept, List<Project> projects, double salary, Gender gender) {
+//    this.name = name;
+//    this.dept = dept;
+//    this.projects = projects;
+//    this.salary = salary;
+//    this.gender = gender;
+//}
+//
+//@Override
+//public String toString() {
+//    return "Employee{" +
+//            "name='" + name + '\'' +
+//            ", dept='" + dept + '\'' +
+//            ", projects=" + projects +
+//            ", salary=" + salary +
+//            ", gender=" + gender +
+//            '}';
+//}
+//}
+//
+//class Project {
+//    String projectID;
+//    String name;
+//    String client;
+//    String BULeadName;
+//
+//    public Project(String projectID, String name, String client, String BULeadName) {
+//        this.projectID = projectID;
+//        this.name = name;
+//        this.client = client;
+//        this.BULeadName = BULeadName;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Project{" +
+//                "projectID='" + projectID + '\'' +
+//                ", name='" + name + '\'' +
+//                ", client='" + client + '\'' +
+//                ", BULeadName='" + BULeadName + '\'' +
+//                '}';
+//    }
+//}
+//
+//enum Gender {
+//    MALE,
+//    FEMALE
+//}c
