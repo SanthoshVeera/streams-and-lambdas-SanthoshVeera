@@ -1,5 +1,7 @@
 package src.entity;
 
+import java.util.Objects;
+
 public class Project {
     String projectID;
     String name;
@@ -43,6 +45,18 @@ public class Project {
 
     public void setBULeadName(String BULeadName) {
         this.BULeadName = BULeadName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Project project = (Project) o;
+        return Objects.equals(projectID, project.projectID) && Objects.equals(name, project.name) && Objects.equals(client, project.client) && Objects.equals(BULeadName, project.BULeadName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(projectID, name, client, BULeadName);
     }
 
     @Override

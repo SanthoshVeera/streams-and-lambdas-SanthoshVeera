@@ -1,6 +1,7 @@
 package src.entity;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Employee {
     private String name;
@@ -55,6 +56,18 @@ public class Employee {
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Double.compare(salary, employee.salary) == 0 && Objects.equals(name, employee.name) && Objects.equals(dept, employee.dept) && Objects.equals(projects, employee.projects) && gender == employee.gender;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, dept, projects, salary, gender);
     }
 
     @Override
