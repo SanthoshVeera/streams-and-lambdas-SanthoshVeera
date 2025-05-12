@@ -1,11 +1,26 @@
 package src;
 
+import src.dao.TempDB;
+import src.entity.Employee;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Ques11 {
     public static void main(String[] args) {
 
 //        Q11. Departments with No Employees
 //        Given a list of departments and a list of employees, return the names of departments with no employees assigned.
 
+        List<Employee> employees = TempDB.getEmployees();
+
+        List<String> emptyDepts = employees.stream()
+                .collect(Collectors.groupingBy(emp -> emp.getDept()))
+                .entrySet()
+                .stream()
+                .filter(x -> x.getValue().size() == 0)
+                .collect(Collectors.mapping(x -> x.getKey(),
+                        Collectors.toList()));
 
 
     }
