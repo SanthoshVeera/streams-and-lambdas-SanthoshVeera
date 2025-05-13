@@ -39,7 +39,15 @@ public class TempDB {
             employeeList.add(new Employee(name, dept, assignedProjects, salary, gender));
 
         }
-        return employeeList;
+        for(int i=0; i< 4; i++) {
+            String dept = departments[random.nextInt(departments.length)];
+            Collections.shuffle(projects);
+            List<Project> assignedProjects = projects.subList(0, 1 + random.nextInt(3));
+            Gender gender = random.nextBoolean() ? Gender.MALE : Gender.FEMALE;
+            double salary = 50000 + Math.random() * 1000000;
+            employeeList.add(new Employee("", dept, assignedProjects, salary, gender));
+        }
+            return employeeList;
     }
 
     public static List<Project> getProjects() {
